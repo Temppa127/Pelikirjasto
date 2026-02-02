@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Pelikirjasto.Pelikokoelma">
+    <Position X="6" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ASAAAAAABAAAAAAAAEAAAAAAAAAACAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Pelikokoelma.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Pelit" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Pelikirjasto.Peli">
+    <Position X="8.5" Y="1.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>BAAAABAAACAgAAAEAAAAAAQAAMAAgAAIAAAAAABACAA=</HashCode>
+      <FileName>Peli.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
