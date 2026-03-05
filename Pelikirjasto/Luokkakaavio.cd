@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Pelikirjasto.Pelikokoelma">
-    <Position X="6" Y="2" Width="1.5" />
+    <Position X="5.75" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ASAAAAAABAAAAAAAAEAAAAAAAAAACAAAQAAAAAAAAAA=</HashCode>
       <FileName>Pelikokoelma.cs</FileName>
@@ -11,14 +11,43 @@
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="Pelikirjasto.Peli">
-    <Position X="8.5" Y="1.5" Width="1.5" />
+    <Position X="8.25" Y="2.75" Width="1.5" />
     <Compartments>
       <Compartment Name="Fields" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>BAAAABAAACAgAAAEAAAAAAQAAMAAgAAIAAAAAABACAA=</HashCode>
+      <HashCode>DAAAABAAACAgAAAEAAAAAAQgAMAAgAAIAAAAAABACAA=</HashCode>
       <FileName>Peli.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
+  <Class Name="Pelikirjasto.PCPeli">
+    <Position X="10.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>DAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>PCPeli.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pelikirjasto.KonsoliPeli">
+    <Position X="10.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>DAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>KonsoliPeli.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pelikirjasto.MobiiliPeli">
+    <Position X="10.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MobiiliPeli.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="IArvosteltava" Collapsed="true">
+    <Position X="8.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>IArvosteltava.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

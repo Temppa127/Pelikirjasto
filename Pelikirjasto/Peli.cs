@@ -3,11 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace Pelikirjasto
 {
-    public class Peli
+    [XmlInclude(typeof(PCPeli))]
+    [XmlInclude(typeof(KonsoliPeli))]
+    [XmlInclude(typeof(MobiiliPeli))]
+    public abstract class Peli : IArvosteltava
     {
+
+        public abstract string HaePelityyppi();
+
         private string _nimi = "";
         private int _julkaisuvuosi;
         private string _julkaisija = "";
@@ -92,26 +99,32 @@ namespace Pelikirjasto
             pk.LisaaPeli(this);
         }
 
-        public string KaikkiTiedot()
+        public virtual string KaikkiTiedot()
         {
             string r1 = $"Peli: {Nimi}";
             string r2 = $"Julkaisuvuosi: {Julkaisuvuosi}";
             string r3 = $"Julkaisija: {Julkaisija}";
             string r4 = $"Kehittäjä: {Kehittaja}";
             string r5 = $"Arvio: {Arvio}/5";
+            string r6 = $"Alusta: {HaePelityyppi()}";
 
-            return r1 + "\n" + r2 + "\n" + r3 + "\n" + r4 + "\n" + r5;
+            return r1 + "\n" + r2 + "\n" + r3 + "\n" + r4 + "\n" + r5 + "\n" + r6;
         }
 
         public override string ToString()
         {
+            return $"{Nimi} ({Julkaisuvuosi})";
+        }
+
+        public string ArvioYhteenveto()
+        {
             if (Arvio == 0) 
             {
-                return $"{Nimi} ({Julkaisuvuosi}) - Arvio: Ei vielä arvioitu";
+                return $"{Nimi}    Arvio: Ei vielä arvioitu";
             }
             else
             { 
-                return $"{Nimi} ({Julkaisuvuosi}) - Arvio: {Arvio}/5"; 
+                return $"{Nimi}    Arvio: {Arvio}/5"; 
             }
         }
 

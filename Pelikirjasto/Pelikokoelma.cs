@@ -15,16 +15,32 @@ namespace Pelikirjasto
 
         public Pelikokoelma(){}
 
-        public Peli? EtsiPeli(string nimi) 
+        public Peli? EtsiPeli(string nimi)
         {
+            List<Peli> mahdPelit = new List<Peli>();
             foreach (Peli peli in Pelit)
             {
-                if (peli.Nimi == nimi)
+                if (peli.Nimi.ToLower() == nimi.ToLower())
                 {
                     return peli;
                 }
+                else if (peli.Nimi.ToLower().Contains(nimi.ToLower()))
+                {
+                    mahdPelit.Add(peli);
+                }
             }
-            return null;
+
+            int maara = mahdPelit.Count;
+            if (maara == 0) { return null; }
+            if (maara == 1) { return mahdPelit[0]; }
+
+            Console.WriteLine("Valitse peli (numero)");
+            for (int i = 0; i < maara; i++) { Console.WriteLine($"[{i + 1}]: " + mahdPelit[i].Nimi); }
+
+            int valinta = -1;
+            bool succ = Int32.TryParse(Console.ReadLine(), out valinta);
+            if (!succ || maara < valinta || valinta < 1) { return null; }
+            return mahdPelit[valinta - 1]; 
         }
 
         public void LisaaPeli(Peli peli)
@@ -89,7 +105,7 @@ namespace Pelikirjasto
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error in saving: " + ex.Message);
+                Console.WriteLine("Virhe ladatessa: " + ex.Message);
             }
             finally
             {
